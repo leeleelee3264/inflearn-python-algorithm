@@ -1,7 +1,7 @@
 # chapter 2 변수입력과 연산자
-# a = input('슷자를 입력하세요: ')
-# print(a)
-'''
+a = input('슷자를 입력하세요: ')
+print(a)
+
 a, b = input('슷자를 입력하세요: ').split()
 print(a + b)
 print(int(a) + int(b))
@@ -14,7 +14,6 @@ print(a / b)
 print(a // b)
 print(a % b)
 print(a ** b)
-'''
 
 a = 4.3
 b = 5
