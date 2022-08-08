@@ -1,3 +1,5 @@
+# chapter 1 변수와 출력함수
+
 a, b, c = 3, 2, 1
 print(a, b, c)
 
