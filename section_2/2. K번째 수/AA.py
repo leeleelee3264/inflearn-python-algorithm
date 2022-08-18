@@ -7,7 +7,7 @@ T = int(input())
 
 for i in range(T):
     n, s, e, k = map(int, input().split())
-    nums = [int(j) for j in input().split()]
+    nums = list(map(int, input().split()))
 
     target_nums = nums[s-1:e]
     target_nums.sort()
