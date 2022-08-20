@@ -1,11 +1,11 @@
 import sys
 
 
-sys.stdin = open('in5.txt', 'rt')
+sys.stdin = open('in6.txt', 'rt')
 n, m = map(int, input().split())
 nums = list(map(int, input().split()))
 
-lt = 1
+lt = max(nums)
 rt = sum(nums)
 results = []
 
@@ -29,16 +29,16 @@ while lt <= rt:
 
     counter = _counter(mid)
 
-    if counter > m:
-        lt = mid + 1
-    elif counter <= m:
+    if counter <= m:
         rt = mid - 1
         results.append(mid)
+    else:
+        lt = mid + 1
 
 print(min(results))
 
 print('-----')
 print('-----')
-sys.stdin = open('out5.txt', 'rt')
+sys.stdin = open('out6.txt', 'rt')
 print(input())
 
