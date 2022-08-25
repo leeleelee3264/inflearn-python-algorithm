@@ -1,17 +1,23 @@
 import sys
 
-sys.stdin = open('in1.txt', 'rt')
+sys.stdin = open('in5.txt', 'rt')
 n = int(input())
 
 
-def _print_diagonal(lst):
-    # To print Primary Diagonal
-    print('Diagonal 1 - ', end="")
-    print([lst[i][i] for i in range(len(lst))])
+def _sum_diagonal_primary(lst):
+    sums = 0
+    for i in range(len(lst)):
+        sums = sums + lst[i][i]
 
-    # To print Secondary Diagonal
-    print('Diagonal 2 - ', end="")
-    print([lst[i][len(lst) - i - 1] for i in range(len(lst))])
+    return sums
+
+
+def _sum_diagonal_secondary(lst):
+    sums = 0
+    for i in range(len(lst)):
+        sums = sums + lst[i][len(lst) - i - 1]
+
+    return sums
 
 
 nums = []
@@ -32,4 +38,12 @@ for i in range(n):
     results.append(sum(changed_dem[i]))
 
 # 대각선
+results.append(_sum_diagonal_primary(nums))
+results.append(_sum_diagonal_secondary(nums))
 
+print(max(results))
+
+print('-----')
+print('-----')
+sys.stdin = open('out5.txt', 'rt')
+print(input())
