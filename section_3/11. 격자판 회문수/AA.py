@@ -1,6 +1,6 @@
 import sys
 
-sys.stdin = open('in5.txt', 'rt')
+sys.stdin = open('in4.txt', 'rt')
 
 n = 7
 a = []
@@ -17,16 +17,13 @@ def check_rows(a) -> int:
     de = [5, 6, 7]
 
     c = 0
-    t = []
-
     for x in a:
         for k in range(3):
-            t.append(list(x[ds[k]:de[k]]))
+            t = list(x[ds[k]:de[k]])
+            r_tt = t[::-1]
+            if r_tt == t:
+                c+=1
 
-    for tt in t:
-        r_tt = list(reversed(tt))
-        if r_tt == tt:
-            c+=1
     return c
 
 def make_2d_for_cols(a):
@@ -48,5 +45,5 @@ result = check_rows(a) + check_rows(aa)
 print(result)
 print('-----')
 print('-----')
-sys.stdin = open('out5.txt', 'rt')
+sys.stdin = open('out4.txt', 'rt')
 print(input())
