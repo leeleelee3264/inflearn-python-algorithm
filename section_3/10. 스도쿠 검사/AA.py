@@ -17,10 +17,10 @@ def check_rows(a) -> bool:
     return True
 
 def check_cols(a) -> bool:
-    dy = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+    dx= [0, 1, 2, 3, 4, 5, 6, 7, 8]
 
-    for x in range(n):
-        s = set(a[x][dy[k]] for k in range(n))
+    for y in range(n):
+        s = set(a[dx[k]][y] for k in range(n))
         if len(s) != n:
             return False
     return True
