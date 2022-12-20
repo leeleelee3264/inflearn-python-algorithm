@@ -1,20 +1,15 @@
 import sys
 
 def is_lower_than_me(src, dest):
-    one = ['+', '-']
     two = ['*', '/']
-
-    if dest == '(':
-       return True
+    one = ['+', '-']
 
     if dest in one and src in two:
-        return True
-    elif dest in two:
         return True
 
     return False
 
-sys.stdin = open('in2.txt', 'rt')
+sys.stdin = open('in5.txt', 'rt')
 
 a = input()
 aa = [ch for ch in a]
@@ -43,13 +38,21 @@ for i in aa:
             while c:
                 top = len(c) -1
                 # 안에 있는 게 우선 순위가 높 때 나를 넣는다.
-                if is_lower_than_me(i, c[top]):
+                if c[top] == '(':
+                    c.append(i)
+                    break
+                elif is_lower_than_me(i, c[top]):
                     c.append(i)
                     break
                 else:
                     # 안에 있는 게 우선순위가 같거나 높을 때 계속 꺼낸다.
                     res+=c[top]
                     c.pop()
+
+                    if not c:
+                        c.append(i)
+                        break
+
 
 while c:
     top = len(c) - 1
@@ -58,7 +61,7 @@ while c:
 
 print(res)
 print('-----')
-sys.stdin = open('out2.txt', 'rt')
+sys.stdin = open('out5.txt', 'rt')
 a = input()
 print(a)
 print('-----')
