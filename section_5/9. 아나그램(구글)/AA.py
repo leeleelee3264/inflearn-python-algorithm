@@ -1,5 +1,4 @@
 import sys
-from collections import deque
 
 sys.stdin = open('in5.txt', 'rt')
 
